@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CompanyFeed</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+<head>
+  <title>CompanyFeed</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= yield %>
-  </body>
+
+</head>
+
+<body>
+  <div class="grid grid-cols-12">
+    <div class="col-span-2">
+      <%= render 'layouts/sidebar-left' %>
+    </div>
+    <div class="col-span-10">
+      <div class="grid grid-cols-12">
+        <div class="col-span-12">
+          <%= render 'layouts/navbar' %>
+        </div>
+        <div class="col-span-9">
+          Header
+        </div>
+        <div class="col-span-3 bg-gray-400 h-screen">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= yield %>
+</body>
+
 </html>
