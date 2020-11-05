@@ -4,3 +4,10 @@
 
 @import "tailwindcss/utilities";
 
+.feed-nav-item:hover {
+    @apply mr-3 p-4 border-b-4 border-blue-400 cursor-pointer text-xs;
+}
+
+.feed-nav-item {
+    @apply mr-3 border-b-4 border-transparent p-4 text-xs;
+}

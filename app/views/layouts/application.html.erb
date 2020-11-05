@@ -18,16 +18,16 @@
     <div class="col-span-2">
       <%= render 'layouts/sidebar-left' %>
     </div>
-    <div class="col-span-10">
+    <div class="col-span-10 bg-gray-100">
       <div class="grid grid-cols-12">
         <div class="col-span-12">
           <%= render 'layouts/navbar' %>
         </div>
         <div class="col-span-9">
-          Header
+          <%= render 'layouts/feed_nav' %>
         </div>
-        <div class="col-span-3 bg-gray-400 h-screen">
-
+        <div class="col-span-3  h-screen">
+          <%= render 'layouts/sidebar-right' %>
         </div>
       </div>
     </div>
