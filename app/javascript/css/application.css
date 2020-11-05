@@ -11,3 +11,11 @@
 .feed-nav-item {
     @apply mr-3 border-b-4 border-transparent p-4 text-xs;
 }
+
+.left-side-nav-item {
+    @apply p-5 text-gray-600 shadow;
+}
+
+.left-side-nav-item:hover {
+    @apply p-5 text-white bg-blue-600 shadow cursor-pointer;
+}
