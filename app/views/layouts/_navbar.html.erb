@@ -16,6 +16,9 @@
                 <li>
                     <i class="fas text-gray-800 fa-cog"></i>
                 </li>
+                <li>
+                    <%= button_to "Logout", destroy_user_session_path, class: "uk-button uk-button-default", method: :delete %>
+                </li>
             </ul>
         </div>
     
