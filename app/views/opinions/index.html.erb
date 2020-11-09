@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= simple_form_for(@opinion) do |f| %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+
+<div class="border w-10/12 mx-auto p-5 bg-white mt-5 rounded">
+  <h5 class="text-lg text-gray-700 mb-2">Add achievment!</h5>
+  <div class="flex justify-center items-start  ">
+    <div class="field w-11/12 ">
+      <%= f.input :Text, input_html: {class: 'border w-full h-full'}, label: false %>
+    </div>
+    <div class=" w-1/12 ">
+      <%= button_tag(type: 'submit', class: "h-10  border w-10 bg-blue-500 text-white") do %>
+      <i class="fa fa-bullhorn"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+
+
+<% @opinions.each do |opinion| %>
+<div class="border w-10/12 mx-auto p-5 bg-white mt-5 rounded">
+  <td><%= opinion.AuthorId %></td>
+  <td><%= opinion.Text %></td>
+  <td><%= link_to 'Show', opinion %></td>
+  <td><%= link_to 'Edit', edit_opinion_path(opinion) %></td>
+  <td><%= link_to 'Destroy', opinion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</div>
+<% end %>
+
+
+<br>
+
+<%= link_to 'New Opinion', new_opinion_path %>

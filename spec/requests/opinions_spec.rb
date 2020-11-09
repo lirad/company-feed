@@ -12,8 +12,8 @@
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/sales", type: :request do
-  # Sale. As you add validations to Sale, be sure to
+RSpec.describe "/opinions", type: :request do
+  # Opinion. As you add validations to Opinion, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -25,58 +25,58 @@ RSpec.describe "/sales", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      Sale.create! valid_attributes
-      get sales_url
+      Opinion.create! valid_attributes
+      get opinions_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /show" do
     it "renders a successful response" do
-      sale = Sale.create! valid_attributes
-      get sale_url(sale)
+      opinion = Opinion.create! valid_attributes
+      get opinion_url(opinion)
       expect(response).to be_successful
     end
   end
 
   describe "GET /new" do
     it "renders a successful response" do
-      get new_sale_url
+      get new_opinion_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /edit" do
     it "render a successful response" do
-      sale = Sale.create! valid_attributes
-      get edit_sale_url(sale)
+      opinion = Opinion.create! valid_attributes
+      get edit_opinion_url(opinion)
       expect(response).to be_successful
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new Sale" do
+      it "creates a new Opinion" do
         expect {
-          post sales_url, params: { sale: valid_attributes }
-        }.to change(Sale, :count).by(1)
+          post opinions_url, params: { opinion: valid_attributes }
+        }.to change(Opinion, :count).by(1)
       end
 
-      it "redirects to the created sale" do
-        post sales_url, params: { sale: valid_attributes }
-        expect(response).to redirect_to(sale_url(Sale.last))
+      it "redirects to the created opinion" do
+        post opinions_url, params: { opinion: valid_attributes }
+        expect(response).to redirect_to(opinion_url(Opinion.last))
       end
     end
 
     context "with invalid parameters" do
-      it "does not create a new Sale" do
+      it "does not create a new Opinion" do
         expect {
-          post sales_url, params: { sale: invalid_attributes }
-        }.to change(Sale, :count).by(0)
+          post opinions_url, params: { opinion: invalid_attributes }
+        }.to change(Opinion, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post sales_url, params: { sale: invalid_attributes }
+        post opinions_url, params: { opinion: invalid_attributes }
         expect(response).to be_successful
       end
     end
@@ -88,42 +88,42 @@ RSpec.describe "/sales", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested sale" do
-        sale = Sale.create! valid_attributes
-        patch sale_url(sale), params: { sale: new_attributes }
-        sale.reload
+      it "updates the requested opinion" do
+        opinion = Opinion.create! valid_attributes
+        patch opinion_url(opinion), params: { opinion: new_attributes }
+        opinion.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the sale" do
-        sale = Sale.create! valid_attributes
-        patch sale_url(sale), params: { sale: new_attributes }
-        sale.reload
-        expect(response).to redirect_to(sale_url(sale))
+      it "redirects to the opinion" do
+        opinion = Opinion.create! valid_attributes
+        patch opinion_url(opinion), params: { opinion: new_attributes }
+        opinion.reload
+        expect(response).to redirect_to(opinion_url(opinion))
       end
     end
 
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
-        sale = Sale.create! valid_attributes
-        patch sale_url(sale), params: { sale: invalid_attributes }
+        opinion = Opinion.create! valid_attributes
+        patch opinion_url(opinion), params: { opinion: invalid_attributes }
         expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested sale" do
-      sale = Sale.create! valid_attributes
+    it "destroys the requested opinion" do
+      opinion = Opinion.create! valid_attributes
       expect {
-        delete sale_url(sale)
-      }.to change(Sale, :count).by(-1)
+        delete opinion_url(opinion)
+      }.to change(Opinion, :count).by(-1)
     end
 
-    it "redirects to the sales list" do
-      sale = Sale.create! valid_attributes
-      delete sale_url(sale)
-      expect(response).to redirect_to(sales_url)
+    it "redirects to the opinions list" do
+      opinion = Opinion.create! valid_attributes
+      delete opinion_url(opinion)
+      expect(response).to redirect_to(opinions_url)
     end
   end
 end

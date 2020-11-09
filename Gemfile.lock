@@ -195,6 +195,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    simple_form (5.0.3)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     solargraph (0.39.17)
       backport (~> 1.1)
       benchmark
@@ -262,6 +265,7 @@ DEPENDENCIES
   rspec-rails (~> 4.0.1)
   rubocop
   sass-rails (>= 6)
+  simple_form
   solargraph
   spring
   spring-watcher-listen (~> 2.0.0)

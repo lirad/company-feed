@@ -19,3 +19,8 @@
 .left-side-nav-item:hover {
     @apply p-5 text-white bg-blue-600 shadow cursor-pointer;
 }
+
+
+input[type="text"] {
+    @apply h-10 border rounded;
+}

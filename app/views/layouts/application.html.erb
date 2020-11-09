@@ -25,6 +25,7 @@
         </div>
         <div class="col-span-9">
           <%= render 'layouts/feed_nav' %>
+          <%= yield %>
         </div>
         <div class="col-span-3  h-screen">
           <%= render 'layouts/sidebar-right' %>
@@ -33,7 +34,7 @@
     </div>
   </div>
 
-  <%= yield %>
+  
 </body>
 
 </html>
