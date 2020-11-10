@@ -1,0 +1,33 @@
+<div class="flex-col flex">
+    <div class="flex justify-center align-middle  items-center mt-5">
+        <div class="w-2/12 text-center">
+            +
+        </div>
+        <div class="w-8/12 mx-auto">
+            <div class="overflow-hidden rounded-full w-40 h-40 mx-auto">
+                <%= user_avatar %>
+            </div>
+        </div>
+        <div class="w-2/12 text-center">
+            -
+        </div>
+    </div>
+    <div class="flex flex-col">
+        <div class=" text-center text-xl"> <%= @user.FullName %></div>
+        <div class=" text-center text-xl text-gray-500">@<%= @user.Username %></div>
+    </div>
+    <div class="flex justify-items-stretch mt-3 ">
+        <div class="p-5 text-center border-r border-t border-b w-4/12">
+            <h3 class="text-gray-900 font-semibold text-xl">6,400</h2>
+            <h5 class="text-gray-600">Tweets</h1>
+        </div>
+        <div class="p-5 text-center border-r border-t border-b w-4/12">
+            <h3 class="text-gray-900 font-semibold text-xl">6,400</h2>
+            <h5 class="text-gray-600">Tweets</h1>
+        </div>
+        <div class="p-5 text-center border-r border-t border-b w-4/12">
+            <h3 class="text-gray-900 font-semibold text-xl">6,400</h2>
+            <h5 class="text-gray-600">Tweets</h1>
+        </div>
+    </div>
+</div>

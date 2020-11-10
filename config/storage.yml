@@ -33,10 +33,4 @@ local:
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
 
-amazon:
-  service: S3
-  access_key_id: "AKIA24AU4ZSMK7ZSINHK"
-  secret_access_key: "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"
-  bucket: "arn:aws:s3:us-east-1:747368139928:accesspoint/app"
-  region: "us-east-1"
 

@@ -68,7 +68,7 @@ class OpinionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_opinion
-      @opinion = Opinion.find(params[:id])
+      @opinion = Opinion.find(current_user.id)
     end
 
     # Only allow a list of trusted parameters through.

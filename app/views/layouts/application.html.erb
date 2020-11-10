@@ -25,11 +25,18 @@
           <%= render 'layouts/navbar' %>
         </div>
         <div class="col-span-9">
+          <% unless current_page?(profile_path)%>
           <%= render 'layouts/feed_nav' %>
+          <% end %>
           <%= yield %>
         </div>
         <div class="col-span-3 border-l min-h-screen">
-          <%= render 'layouts/sidebar-right' %>
+          <%  unless current_page?(profile_path)%>
+            <%= render 'layouts/sidebar-right' %>
+          <% end %>
+          <% if current_page?(profile_path)%>
+            <%= render 'profiles/profile-right-bar' %>
+          <% end %>
         </div>
       </div>
     </div>
