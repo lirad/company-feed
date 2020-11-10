@@ -14,13 +14,16 @@
                 <i class="fas text-gray-800 fa-search"></i>
             </li>
             <li>
+                <%= button_to(edit_user_registration_path, method: :get, :class=> "text-gray-800") do %>
                 <i class="fas text-gray-800 fa-cog"></i>
+                <% end %>
+
             </li>
             <li>
 
 
                 <%= button_to(destroy_user_session_path, method: :delete, :class=> "text-gray-800") do %>
-                    <i class="fas fa-sign-out-alt"></i>
+                <i class="fas fa-sign-out-alt"></i>
                 <% end %>
 
             </li>

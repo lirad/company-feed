@@ -45,3 +45,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 .form-title {
     @apply text-2xl text-center mt-2;
 }
+
+.who-to-follow img {
+    border-radius: 100px;
+}

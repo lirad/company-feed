@@ -7,10 +7,10 @@ class OpinionsController < ApplicationController
   def index
     @opinions = Opinion.all
     @opinion = Opinion.new
-
-    @who = User.who_to_follow(current_user)
+    
   end
 
+  
   # GET /opinions/1
   # GET /opinions/1.json
   def show
@@ -28,12 +28,12 @@ class OpinionsController < ApplicationController
   # POST /opinions
   # POST /opinions.json
   def create
-    @opinion = Opinion.new(opinion_params)
+    @opinion = current_user.opinions.build(opinion_params)
 
     respond_to do |format|
       if @opinion.save
-        format.html { redirect_to @opinion, notice: 'Opinion was successfully created.' }
-        format.json { render :show, status: :created, location: @opinion }
+        format.html { redirect_to index, notice: 'Opinion was successfully created.' }
+        format.json { render :index, status: :created, location: @opinion }
       else
         format.html { render :new }
         format.json { render json: @opinion.errors, status: :unprocessable_entity }

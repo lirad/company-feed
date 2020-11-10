@@ -22,7 +22,6 @@ class FollowingsController < ApplicationController
   def edit
   end
 
-
   # POST /followings
   # POST /followings.json
   def create
