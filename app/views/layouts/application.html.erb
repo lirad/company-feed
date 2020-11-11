@@ -32,16 +32,16 @@
         </div>
         <div class="col-span-9">
           <% unless current_page?("/profile/#{params[:id]}")%>
-          <%= render 'layouts/feed_nav' %>
+            <%= render 'layouts/feed_nav' %>
           <% end %>
           <%= yield %>
         </div>
         <div class="col-span-3 border-l min-h-screen">
           <%  unless current_page?("/profile/#{params[:id]}")%>
-          <%= render 'layouts/sidebar-right' %>
+            <%= render 'layouts/sidebar-right' %>
           <% end %>
           <% if current_page?("/profile/#{params[:id]}")%>
-          <%= render 'profiles/profile-right-bar' %>
+            <%= render 'profiles/profile-right-bar' %>
           <% end %>
         </div>
       </div>
