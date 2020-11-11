@@ -3,7 +3,8 @@
     "extends": ["stylelint-config-standard"],
     "plugins": ["stylelint-scss", "stylelint-csstree-validator"],
     "rules": {
-      "at-rule-no-unknown": [ true,
+      "at-rule-no-unknown": [ 
+        true,
       {
         "ignoreAtRules": [
           "tailwind",
@@ -14,7 +15,9 @@
         ]
       }],
       "scss/at-rule-no-unknown": true,
-      "csstree/validator": true
+      "csstree/validator": true,
+      "declaration-block-trailing-semicolon": null,
+      "no-descending-specificity": null
     },
-    "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css"]
+    "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", ""]
   }
