@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   
   get 'static/index'
 
-  resource :profile
+  get '/profile/:id', to: 'profiles#show', as: 'profile'
+
+  resources :followings do
+    
+  end
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

@@ -24,6 +24,18 @@ module ApplicationHelper
         end
     end
 
+    def has_cover(user)
+        if user.CoverImage.attached?
+            image_tag user.CoverImage
+        else
+            image_tag 'default-bg.png'
+        end
+    end
+
+    def is_self(user)
+        current_user == user
+    end
+
     def who_to_follow
         users_followed = []
         current_user.following_relationships.each { |n| users_followed << n.FollowedId }

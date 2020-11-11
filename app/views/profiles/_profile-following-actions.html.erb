@@ -1,0 +1,15 @@
+<% if is_a_follower(@user.id) %>
+<%= button_to  following_path, 
+    params: {:following => {:FollowedId => @user.id} }, 
+    method: :delete, data: { confirm: 'Are you sure?' } do %>
+<i class="fas fa-minus-circle text-4xl text-center  text-red-500 h-12 w-12 hover:text-blue-600 cursor-pointer"></i>
+<% end %>
+<% end %>
+
+<% if !is_a_follower(@user.id) %>
+<%= button_to  followings_path, 
+    params: {:following => {:FollowedId => @user.id} }, 
+    method: :post, data: { confirm: 'Are you sure?' } do %>
+<i class="fas fa-plus-circle text-4xl text-center  text-gray-500 h-12 w-12 hover:text-blue-600 cursor-pointer"></i>
+<% end %>
+<% end %>

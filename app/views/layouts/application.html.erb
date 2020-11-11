@@ -12,6 +12,12 @@
 
 
 </head>
+<!-- <% if notice.present? %>
+<div id="notice" class="fixed top-0 bg-green-700 h-8  w-screen text-center text-white">
+  <%= notice %>
+</div>
+<% end %> -->
+
 
 <body>
   <% if current_user %>
@@ -25,17 +31,17 @@
           <%= render 'layouts/navbar' %>
         </div>
         <div class="col-span-9">
-          <% unless current_page?(profile_path)%>
+          <% unless current_page?("/profile/#{params[:id]}")%>
           <%= render 'layouts/feed_nav' %>
           <% end %>
           <%= yield %>
         </div>
         <div class="col-span-3 border-l min-h-screen">
-          <%  unless current_page?(profile_path)%>
-            <%= render 'layouts/sidebar-right' %>
+          <%  unless current_page?("/profile/#{params[:id]}")%>
+          <%= render 'layouts/sidebar-right' %>
           <% end %>
-          <% if current_page?(profile_path)%>
-            <%= render 'profiles/profile-right-bar' %>
+          <% if current_page?("/profile/#{params[:id]}")%>
+          <%= render 'profiles/profile-right-bar' %>
           <% end %>
         </div>
       </div>

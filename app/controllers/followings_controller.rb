@@ -22,20 +22,16 @@ class FollowingsController < ApplicationController
   def edit
   end
 
+
+
   # POST /followings
   # POST /followings.json
   def create
-    @following = Following.new(following_params)
+    @following = current_user.following_relationships.create(following_params)
+    
+    redirect_to profile_path(following_params[:FollowedId]), :notice => "Post has been saved successfully."
 
-    respond_to do |format|
-      if @following.save
-        format.html { redirect_to @following, notice: 'Following was successfully created.' }
-        format.json { render :show, status: :created, location: @following }
-      else
-        format.html { render :new }
-        format.json { render json: @following.errors, status: :unprocessable_entity }
-      end
-    end
+  
   end
 
   # PATCH/PUT /followings/1
@@ -55,21 +51,18 @@ class FollowingsController < ApplicationController
   # DELETE /followings/1
   # DELETE /followings/1.json
   def destroy
-    @following.destroy
-    respond_to do |format|
-      format.html { redirect_to followings_url, notice: 'Following was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    current_user.following_relationships.find_by(FollowedId: following_params[:FollowedId]).destroy
+    redirect_to profile_path(following_params[:FollowedId]), :notice => "Post has been saved successfully."
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_following
-      @following = Following.find(params[:id])
+      # @following = current_user.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def following_params
-      params.fetch(:following, {:FollowerId, :FollowerId})
+      params.require(:following).permit(:FollowerId, :FollowedId)
     end
 end
