@@ -1,4 +1,4 @@
-<% if is_a_follower(@user.id) %>
+<% if a_follower?(@user.id) %>
 <%= button_to  following_path, 
     params: {:following => {:FollowedId => @user.id} }, 
     method: :delete, data: { confirm: 'Are you sure?' } do %>
@@ -6,7 +6,7 @@
 <% end %>
 <% end %>
 
-<% if !is_a_follower(@user.id) %>
+<% if !a_follower?(@user.id) %>
 <%= button_to  followings_path, 
     params: {:following => {:FollowedId => @user.id} }, 
     method: :post, data: { confirm: 'Are you sure?' } do %>

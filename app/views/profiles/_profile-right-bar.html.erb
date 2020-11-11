@@ -5,7 +5,7 @@
         </div>
         <div class="w-8/12 mx-auto">
             <div class="overflow-hidden rounded-full w-40 h-40 mx-auto">
-                <%= has_avatar(@user) %>
+                <%= avatar?(@user) %>
             </div>
         </div>
         <div class="w-2/12 text-center">
@@ -30,7 +30,7 @@
             <li class="flex align-middle my-5 overflow-hidden justify-between">
                 <div class="flex">
                     <div class="h-12 w-12 bg-gray-700 rounded-full object-contain">
-                        <%= has_avatar(u) %>
+                        <%= avatar?(u) %>
                     </div>
                     <div class="ml-2 text-left">
                         <div><%= u.FullName %></div>

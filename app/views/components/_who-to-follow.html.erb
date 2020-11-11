@@ -4,7 +4,7 @@
     <ul class="who-to-follow">
         <li class="flex align-middle my-5 overflow-hidden">
             <div class="h-12 w-12 bg-gray-700 rounded-full object-contain">
-                <%= has_avatar(u) %>
+                <%= avatar?(u) %>
             </div>
             <div class="ml-2">
                 <div><%= link_to u.FullName, {:controller => "profiles", :action => "show", :id => u.id }, class: "hover:text-blue-700"%></div>
