@@ -43,4 +43,11 @@ module ApplicationHelper
         return User.where.not(id: users_followed).limit(3).order("created_at")
     end
     
+    def followers_count
+        current_user.followers.count
+    end
+
+    def following_count
+        current_user.followings.count
+    end
 end

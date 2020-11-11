@@ -7,7 +7,7 @@
                 <%= has_avatar(u) %>
             </div>
             <div class="ml-2">
-                <div><%= u.FullName %></div>
+                <div><%= link_to u.FullName, {:controller => "profiles", :action => "show", :id => u.id }, class: "hover:text-blue-700"%></div>
                 <div class="text-xs font-thin text-gray-600">Followed by <%= u.FullName %></div>
             </div>
         </li>

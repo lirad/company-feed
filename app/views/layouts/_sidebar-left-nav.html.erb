@@ -1,17 +1,7 @@
 <ul>
     <li class="left-side-nav-item ">
-        <i class="fas fa-home"></i>    Home
-    </li>
-    <li class="left-side-nav-item">
-        <i class="fas fa-at"></i>   Connect
-    </li>
-    <li class="left-side-nav-item">
-        <i class="fas fa-at"></i>   Discover
-    </li>
-    <li class="left-side-nav-item">
-        <i class="fas fa-at"></i>   People
-    </li>
-    <li class="left-side-nav-item">
-        <i class="fas fa-at"></i>   Statistcs
+        <%= button_to(opinions_path, method: :get) do %>
+        <i class="fas fa-home"></i> Home
+        <% end %>
     </li>
 </ul>
