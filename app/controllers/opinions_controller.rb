@@ -1,7 +1,6 @@
 class OpinionsController < ApplicationController
   before_action :set_opinion, only: %i[show edit update destroy]
   before_action :authenticate_user!
-  
 
   # GET /opinions
   # GET /opinions.json
@@ -18,8 +17,6 @@ class OpinionsController < ApplicationController
   def new
     @opinion = Opinion.new
   end
-
-  
 
   # POST /opinions
   # POST /opinions.json
