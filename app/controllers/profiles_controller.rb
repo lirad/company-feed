@@ -1,4 +1,4 @@
-class ProfilesController < OpinionsController
+class ProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def show
