@@ -37,7 +37,21 @@
                     </div>
                 </div>
                 <div>
-                    <%= render 'profile-following-actions'%>
+                    <% if a_follower?(u.id) %>
+                    <%= button_to  following_path, 
+                        params: {:following => {:FollowedId => u.id} }, 
+                        method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="fas fa-minus-circle text-4xl text-center  text-red-500 h-12 w-12 hover:text-blue-600 cursor-pointer"></i>
+                    <% end %>
+                    <% end %>
+
+                    <% if !a_follower?(u.id) %>
+                    <%= button_to  followings_path, 
+                        params: {:following => {:FollowedId => u.id} }, 
+                        method: :post, data: { confirm: 'Are you sure?' } do %>
+                    <i class="fas fa-plus-circle text-4xl text-center  text-gray-500 h-12 w-12 hover:text-blue-600 cursor-pointer"></i>
+                    <% end %>
+                    <% end %>
                 </div>
             </li>
         </ul>
@@ -48,6 +62,7 @@
             <div class="text-gray-600">It is not followed by anyone</div>
         </div>
         <% end %>
+        
     </div>
 
 </div>

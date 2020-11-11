@@ -6,8 +6,8 @@ class ProfilesController < OpinionsController
     @id = params[:id]
     @tweets = @user.opinions.count
     @followers_count = @user.followers.count
-    @followers = @user.followers.where.not(id: current_user.id)
+    @followers = @user.followers.where.not(id: current_user.id).includes([:Photo_attachment => [:blob]] )
     @following = @user.followings.count
-    @opinions = @user.opinions
+    @opinions = @user.opinions.includes(:user => [:Photo_attachment => [:blob]] )
   end
 end
