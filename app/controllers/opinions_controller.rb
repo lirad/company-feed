@@ -5,7 +5,7 @@ class OpinionsController < ApplicationController
   # GET /opinions
   # GET /opinions.json
   def index
-    @opinions = Opinion.includes(:user => [:Photo_attachment => [:blob]] ).all.order('created_at DESC')
+    @opinions = Opinion.includes(user: [Photo_attachment: [:blob]]).all.order('created_at DESC')
     @opinion = Opinion.new
   end
 
