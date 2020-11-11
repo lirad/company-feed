@@ -19,5 +19,5 @@
       "declaration-block-trailing-semicolon": null,
       "no-descending-specificity": null
     },
-    "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", "**/application.css"]
+    "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", "**/application.css", "**/application.css.scss"]
   }
