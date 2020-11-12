@@ -47,8 +47,6 @@ This project was a built as final capstone for the Ruby on Rails module in the M
 
 ## Testing ⏳
 
-> Follow these steps below to get my application working
-
 Run `rspec` to run the tests
 
 ## Author
