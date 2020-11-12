@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CompanyFeed</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+<head>
+  <title>CompanyFeed</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= yield %>
-  </body>
+
+</head>
+<!-- <% if notice.present? %>
+<div id="notice" class="fixed top-0 bg-green-700 h-8  w-screen text-center text-white">
+  <%= notice %>
+</div>
+<% end %> -->
+
+
+<body>
+  <% if current_user %>
+  <div class="grid grid-cols-12">
+    <div class="col-span-2">
+      <%= render 'layouts/sidebar-left' %>
+    </div>
+    <div class="col-span-10 bg-gray-100">
+      <div class="grid grid-cols-12">
+        <div class="col-span-12">
+          <%= render 'layouts/navbar' %>
+        </div>
+        <div class="col-span-9">
+          <% unless current_page?("/profile/#{params[:id]}")%>
+            <%= render 'layouts/feed_nav' %>
+          <% end %>
+          <%= yield %>
+        </div>
+        <div class="col-span-3 border-l min-h-screen">
+          <%  unless current_page?("/profile/#{params[:id]}")%>
+            <%= render 'layouts/sidebar-right' %>
+          <% end %>
+          <% if current_page?("/profile/#{params[:id]}")%>
+            <%= render 'profiles/profile-right-bar' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <% if !current_user %>
+  <div class="w-6/12 mx-auto h-screen flex flex-col align-middle justify-center">
+    <div class="border h-auto mx-auto w-full">
+      <%= yield %>
+    </div>
+  </div>
+  <% end %>
+
+
+</body>
+
 </html>

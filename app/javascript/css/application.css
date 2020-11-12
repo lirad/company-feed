@@ -3,3 +3,55 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+.feed-nav-item:hover {
+    @apply mr-3 p-4 border-b-4 border-blue-400 cursor-pointer text-xs;
+}
+
+.feed-nav-item {
+    @apply mr-3 border-b-4 border-transparent p-4 text-xs;
+}
+
+.left-side-nav-item {
+    @apply p-5 text-gray-600 shadow;
+}
+
+.left-side-nav-item:hover {
+    @apply p-5 text-white bg-blue-600 shadow cursor-pointer;
+}
+
+
+input[type="text"], input[type="email"], input[type="password"] {
+    @apply h-10 border rounded;
+}
+
+
+.btn {
+    @apply w-full px-4 py-3 my-1 pb-2 cursor-pointer;
+}
+
+.btn-primary {
+    @apply bg-blue-400 text-white;
+}
+
+.btn-default {
+    @apply bg-gray-400 text-gray-500;
+}
+
+.btn:hover {
+    @apply opacity-50;
+}
+
+.form-title {
+    @apply text-2xl text-center mt-2;
+}
+
+.who-to-follow img {
+    border-radius: 100px;
+}
+
+.cover img {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}

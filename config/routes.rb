@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get 'static/index'
-  root to: 'static#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  get '/profile/:id', to: 'profiles#show', as: 'profile'
+
+  resources :opinions, only: [:show, :create, :index]
+  resources :followings, only: [:create, :destroy, :index, :show] 
+
+  devise_for :users, :controllers => {registrations: 'registrations'}
+
+  root :to => "opinions#index"
 end

@@ -1,0 +1,35 @@
+<nav class='bg-gradient-to-t bg-blue-500 flex items-center justify-between flex-wrap py-5 px-6 w-full'>
+    <div class="w-9/12">
+        <%= link_to(opinions_path, method: :get) do %>
+        <i class="fas text-white fa-building fa-2x "></i>
+        <% end %>
+    </div>
+    <div class="w-2/12">
+        <ul class="list-none flex justify-around">
+            <li>
+                <i class="fas text-gray-800 fa-pencil-alt"></i>
+            </li>
+            <li>
+                <i class="fas text-gray-800 fa-envelope"></i>
+            </li>
+            <li>
+                <i class="fas text-gray-800 fa-search"></i>
+            </li>
+            <li>
+                <%= button_to(edit_user_registration_path, method: :get, :class=> "text-gray-800") do %>
+                <i class="fas text-gray-800 fa-cog"></i>
+                <% end %>
+
+            </li>
+            <li>
+
+
+                <%= button_to(destroy_user_session_path, method: :delete, :class=> "text-gray-800") do %>
+                <i class="fas fa-sign-out-alt"></i>
+                <% end %>
+
+            </li>
+        </ul>
+    </div>
+
+</nav>
