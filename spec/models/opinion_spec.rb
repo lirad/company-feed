@@ -8,6 +8,7 @@ RSpec.describe Opinion, type: :model do
   end
 
   context 'Opinions action' do
+
     it 'user can post an opinion' do
       expect(@opinion.valid?).to eq(true)
     end
@@ -26,5 +27,6 @@ RSpec.describe Opinion, type: :model do
     it 'user can list its own opinions' do
       expect(@user_a.opinions.length).to eq(1)
     end
+    
   end
 end
