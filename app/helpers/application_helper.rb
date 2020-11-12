@@ -39,7 +39,7 @@ module ApplicationHelper
     users_followed = []
     current_user.following_relationships.each { |n| users_followed << n.FollowedId }
     users_followed << current_user.id
-    User.where.not(id: users_followed).limit(3).order('created_at')
+    User.where.not(id: users_followed).limit(3).order('created_at DESC')
   end
 
   def followers_count
